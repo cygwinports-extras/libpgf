@@ -1,0 +1,22 @@
+--- origsrc/libpgf/doc/Doxyfile.in	2012-10-31 01:19:40.913725400 -0500
++++ src/libpgf/doc/Doxyfile.in	2012-10-31 01:19:55.878581300 -0500
+@@ -619,7 +619,7 @@ WARN_LOGFILE           =
+ # directories like "/usr/src/myproject". Separate the files or directories 
+ # with spaces.
+ 
+-INPUT                  = ..
++INPUT                  = @top_srcdir@/include
+ 
+ # This tag can be used to specify the character encoding of the source files 
+ # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 
+--- origsrc/libpgf/doc/Makefile.am	2012-06-26 03:03:03.000000000 -0500
++++ src/libpgf/doc/Makefile.am	2012-10-31 01:14:44.026605900 -0500
+@@ -7,7 +7,7 @@ clean-local:
+ 	rm -rf html man latex *~
+ 
+ html/index.html: Doxyfile
+-	doxygen Doxyfile.in
++	doxygen Doxyfile
+ 
+ install-data-local: html/index.html
+ 	$(mkinstalldirs) $(DOC_DIR)/html

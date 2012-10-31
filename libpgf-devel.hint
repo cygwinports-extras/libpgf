@@ -1,7 +1,0 @@
-category: Graphics
-requires: libpgf1 libstdc++6-devel
-external-source: libpgf
-sdesc: "PGF image format library (development)"
-ldesc: "A new image file format, called Progressive Graphics File (PGF), 
-which is based on a discrete wavelet transform with progressive coding 
-features."

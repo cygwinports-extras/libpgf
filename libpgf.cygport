@@ -1,0 +1,24 @@
+NAME="libpgf"
+VERSION=6.12.24
+RELEASE=1
+CATEGORY="Graphics"
+SUMMARY="Progressive Graphics File library"
+DESCRIPTION="A new image file format, called Progressive Graphics File (PGF),
+which is based on a discrete wavelet transform with progressive coding features."
+HOMEPAGE="http://www.libpgf.org/"
+SRC_URI="mirror://sourceforge/libpgf/${P}-src.tar.gz"
+SRC_DIR=${PN}
+
+PATCH_URI="
+	6.09.44-no-undefined.patch
+	6.09.44-platform-cygwin.patch
+	6.12.24-doxygen-vpath.patch
+"
+
+PKG_NAMES="libpgf6 libpgf-devel"
+libpgf6_CONTENTS="--exclude=html usr/bin/cygpgf-6.dll usr/share/doc/"
+libpgf_devel_CONTENTS="usr/include/ usr/lib/ usr/share/doc/libpgf/html/ usr/share/man/"
+
+MAKEOPTS+=" DOC_MODULE=${PN}"
+
+KEEP_LA_FILES="none"
